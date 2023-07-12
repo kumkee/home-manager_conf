@@ -38,8 +38,8 @@
     pkgs.xz
     pkgs.curl
     pkgs.man
-    pkgs.zsh
     pkgs.openssh
+    pkgs.nodejs_20
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -78,5 +78,15 @@
     enable = true;
     viAlias = true;
     vimAlias = true;
+  };
+
+  programs.zsh = {
+    enable = true;
+    enableAutosuggestions = true;
+    enableCompletion = true;
+    oh-my-zsh = {
+      enable = true;
+      theme = "ys";
+    };
   };
 }
