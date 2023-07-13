@@ -36,7 +36,6 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
-    git
     openssh
     unzip
     nodejs_20
@@ -95,5 +94,14 @@
       theme = "ys";
       plugins = ["git" "vi-mode"];
     };
+  };
+
+  programs.git = {
+    enable = true;
+    userName = "Jinjun Liang";
+    userEmail = "kumkee@users.noreply.github.com";
+    attributes = [
+      "init.defaultBranch=main"
+    ];
   };
 }
