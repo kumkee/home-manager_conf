@@ -6,8 +6,8 @@
 3. On a Powershell, `wsl --import alpine .\WSL\alpine\ .\backup\Alpine\rootfs.tar.gz --version 2`
 
 ## Install NixOS
-Install `xz-utils` and `curl`
-Install NixOS using [official WSL guide for multiuser](https://nixos.org/download.html#nix-install-windows).
+- Install `xz-utils` and `curl`
+- Install NixOS using [official WSL guide for multiuser](https://nixos.org/download.html#nix-install-windows).
 
 ## Clone `.conf`
 
@@ -23,5 +23,5 @@ Install NixOS using [official WSL guide for multiuser](https://nixos.org/downloa
 
 
 ## Install `home-manager`
-Install [home-manager](https://nix-community.github.io/home-manager/index.html#ch-installation)
-Using this [blog post](https://cbailey.co.uk/posts/a_minimal_nix_development_environment_on_wsl).
+- Install [home-manager](https://nix-community.github.io/home-manager/index.html#ch-installation)
+- Have a look at this [blog post](https://cbailey.co.uk/posts/a_minimal_nix_development_environment_on_wsl).
