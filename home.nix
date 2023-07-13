@@ -40,6 +40,8 @@
     nodejs_20
     python3
     dotnet-sdk_7
+    nodePackages.http-server
+    elmPackages.elm
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
