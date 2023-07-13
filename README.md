@@ -1,10 +1,13 @@
 # Nix with WSL Alpine
 
-## Install Alpine
+## Install Alpine or Debian
 1. Download latest zip from https://github.com/yuk7/AlpineWSL.
 2. Extract `Alpine.zip` into `D:\backup\Alpine`
 3. On a Powershell, `wsl --import alpine .\WSL\alpine\ .\backup\Alpine\rootfs.tar.gz --version 2`
 
+## Install NixOS
+Install `gz-utils` and `curl`
+Install NixOS ssing official WSL guid for multiuser.
 
 ## Clone `.conf`
 
