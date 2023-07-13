@@ -10,4 +10,6 @@
 
 ## Install `home-manager`
 Using this [blog post](https://cbailey.co.uk/posts/a_minimal_nix_development_environment_on_wsl).
-`ln -s $PWD/prfile ~/.profile`
+
+## Clone `.conf`
+And make soft links. (including `ln -s $PWD/prfile ~/.profile`)
