@@ -23,4 +23,5 @@ Install NixOS using [official WSL guide for multiuser](https://nixos.org/downloa
 
 
 ## Install `home-manager`
+Install [home-manager](https://nix-community.github.io/home-manager/index.html#ch-installation)
 Using this [blog post](https://cbailey.co.uk/posts/a_minimal_nix_development_environment_on_wsl).
