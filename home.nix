@@ -39,6 +39,7 @@
     unzip
     nodejs_20
     python3
+    dotnet-sdk_7
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
