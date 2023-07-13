@@ -102,6 +102,9 @@
     userEmail = "kumkee@users.noreply.github.com";
     extraConfig = {
       init = {defaultBranch = "main";};
+      pull = {rebase = true;};
+      fetch = {prune = true;};
+      diff = {colorMoved = "zebra";};
     };
     aliases = {
       l = "log --graph --decorate --date=short --format='%C(bold blue)%h %C(bold green)%ad %C(auto)%d  %C(white)%s%C(reset)'";
