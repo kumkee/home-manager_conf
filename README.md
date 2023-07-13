@@ -6,8 +6,8 @@
 3. On a Powershell, `wsl --import alpine .\WSL\alpine\ .\backup\Alpine\rootfs.tar.gz --version 2`
 
 ## Install NixOS
-Install `gz-utils` and `curl`
-Install NixOS ssing official WSL guid for multiuser.
+Install `xz-utils` and `curl`
+Install NixOS using [official WSL guide for multiuser](https://nixos.org/download.html#nix-install-windows).
 
 ## Clone `.conf`
 
