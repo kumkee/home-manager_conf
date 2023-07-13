@@ -102,7 +102,8 @@
     userEmail = "kumkee@users.noreply.github.com";
     extraConfig = {
       init = {defaultBranch = "main";};
-      pull = {rebase = true;};
+      pull = {rebase = false; ff = false;};
+      push = {default = "simple";};
       fetch = {prune = true;};
       diff = {colorMoved = "zebra";};
     };
