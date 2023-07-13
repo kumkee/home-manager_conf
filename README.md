@@ -13,10 +13,10 @@
 
 ### Generate ssh key
 `nix-shell -p openssh --run 'ssh-keygen -t ed25519'`
-### Cloning
 
-`nix-shell -p openssh git --run 'git clone git@github.com:kumkee/.config.git'`
-`nix-shell -p git openssh --run 'git submodule update --init --recursive'`
+### Cloning
+- `nix-shell -p openssh git --run 'git clone git@github.com:kumkee/.config.git'`
+- `nix-shell -p git openssh --run 'git submodule update --init --recursive'`
 
 ### Soft links
 `.config/softlinks.sh`
