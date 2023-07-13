@@ -92,7 +92,7 @@
     oh-my-zsh = {
       enable = true;
       theme = "ys";
-      plugins = ["git" "vi-mode"];
+      plugins = ["git" "vi-mode" "systemd"];
     };
   };
 
@@ -102,7 +102,10 @@
     userEmail = "kumkee@users.noreply.github.com";
     extraConfig = {
       init = {defaultBranch = "main";};
-      pull = {rebase = false; ff = false;};
+      pull = {
+        rebase = false;
+        ff = false;
+      };
       push = {default = "simple";};
       fetch = {prune = true;};
       diff = {colorMoved = "zebra";};
