@@ -35,10 +35,10 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
     git
-    xz
-    curl
     openssh
+    unzip
     nodejs_20
+    python3
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
