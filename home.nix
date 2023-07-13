@@ -86,6 +86,7 @@
     oh-my-zsh = {
       enable = true;
       theme = "ys";
+      plugins = [ "git" "vi-mode" ];
     };
   };
 }
