@@ -100,8 +100,8 @@
     enable = true;
     userName = "Jinjun Liang";
     userEmail = "kumkee@users.noreply.github.com";
-    attributes = [
-      "init.defaultBranch=main"
-    ];
+    extraConfig = {
+      init = { defaultBranch = "main"; };
+    };
   };
 }
