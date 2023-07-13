@@ -40,7 +40,7 @@
     nodejs_20
     python3
     dotnet-sdk_7
-    cargo
+    nil
     nodePackages.http-server
     elmPackages.elm
   ];
