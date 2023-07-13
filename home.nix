@@ -37,7 +37,6 @@
     git
     xz
     curl
-    man
     openssh
     nodejs_20
   ];
