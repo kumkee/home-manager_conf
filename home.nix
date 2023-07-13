@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "liang";
@@ -41,6 +43,7 @@
     python3
     dotnet-sdk_7
     nil
+    alejandra
     nodePackages.http-server
     elmPackages.elm
   ];
@@ -90,7 +93,7 @@
     oh-my-zsh = {
       enable = true;
       theme = "ys";
-      plugins = [ "git" "vi-mode" ];
+      plugins = ["git" "vi-mode"];
     };
   };
 }
