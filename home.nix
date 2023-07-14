@@ -3,6 +3,8 @@
   pkgs,
   ...
 }: {
+  targets.genericLinux.enable = true;
+
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "liang";
@@ -36,13 +38,20 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
+    # system tools
     openssh
     unzip
+    bash-completion # needed for systemctl
+    zsh-autocomplete
+    zsh-completions
+    # Development
     nodejs_20
     python3
     dotnet-sdk_7
+    # nix language tools
     nil
     alejandra
+    # node packages
     nodePackages.http-server
     elmPackages.elm
   ];
@@ -92,8 +101,12 @@
     oh-my-zsh = {
       enable = true;
       theme = "ys";
-      plugins = ["git" "vi-mode"];
+      plugins = ["git" "vi-mode" "systemd" "sudo"];
     };
+    initExtra = ''
+      source $HOME/.config/completion/dotnet.sh
+      source $HOME/.config/completion/elm-sh-completion/elm-completion.sh
+    '';
   };
 
   programs.git = {
@@ -102,11 +115,46 @@
     userEmail = "kumkee@users.noreply.github.com";
     extraConfig = {
       init = {defaultBranch = "main";};
+      pull = {
+        rebase = false;
+        ff = false;
+      };
+      push = {default = "simple";};
+      fetch = {prune = true;};
+      diff = {colorMoved = "zebra";};
     };
     aliases = {
       l = "log --graph --decorate --date=short --format='%C(bold blue)%h %C(bold green)%ad %C(auto)%d  %C(white)%s%C(reset)'";
       lg = "log --graph --decorate --oneline";
       pm = "push origin HEAD:main";
     };
+  };
+
+  programs.tmux = {
+    enable = true;
+    escapeTime = 10;
+    keyMode = "vi";
+    prefix = "C-a";
+    terminal = "screen-256color";
+    plugins = with pkgs.tmuxPlugins; [
+      sensible
+      fpp
+      resurrect
+    ];
+    extraConfig = ''
+      # navigate between panes
+      bind-key h select-pane -L
+      bind-key j select-pane -D
+      bind-key k select-pane -U
+      bind-key l select-pane -R
+      # resize the pane
+      bind-key -r J resize-pane -D 5
+      bind-key -r K resize-pane -U 5
+      bind-key -r H resize-pane -L 5
+      bind-key -r L resize-pane -R 5
+      # resurrect options
+      set -g @resurrect-strategy-nvim 'session'
+      set -g @resurrect-capture-pane-contents 'on'
+    '';
   };
 }
