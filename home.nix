@@ -134,29 +134,25 @@
     enable = true;
     escapeTime = 10;
     keyMode = "vi";
+    prefix = "C-a";
+    terminal = "screen-256color";
     plugins = with pkgs.tmuxPlugins; [
       sensible
       fpp
       resurrect
     ];
     extraConfig = ''
-      # new prefix
-      unbind C-b
-      set -g prefix C-a
-
       # navigate between panes
       bind-key h select-pane -L
       bind-key j select-pane -D
       bind-key k select-pane -U
       bind-key l select-pane -R
-
       # resize the pane
-      bind-key -r J resize-pane -D 3
-      bind-key -r K resize-pane -U 3
-      bind-key -r H resize-pane -L 3
-      bind-key -r L resize-pane -R 3
-
-      # tmux-resurrect options
+      bind-key -r J resize-pane -D 5
+      bind-key -r K resize-pane -U 5
+      bind-key -r H resize-pane -L 5
+      bind-key -r L resize-pane -R 5
+      # resurrect options
       set -g @resurrect-strategy-nvim 'session'
       set -g @resurrect-capture-pane-contents 'on'
     '';
