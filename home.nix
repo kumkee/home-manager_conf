@@ -3,6 +3,8 @@
   pkgs,
   ...
 }: {
+  targets.genericLinux.enable = true;
+
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "liang";
@@ -36,13 +38,17 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
+    # system tools
     openssh
     unzip
+    # Development
     nodejs_20
     python3
     dotnet-sdk_7
+    # nix language tools
     nil
     alejandra
+    # node packages
     nodePackages.http-server
     elmPackages.elm
   ];
@@ -89,10 +95,13 @@
     enable = true;
     enableAutosuggestions = true;
     enableCompletion = true;
+    initExtra = ''
+      source $HOME/.config/completion/dotnet.sh
+    '';
     oh-my-zsh = {
       enable = true;
       theme = "ys";
-      plugins = ["git" "vi-mode" "systemd"];
+      plugins = ["git" "vi-mode" "systemd" "sudo"];
     };
   };
 
