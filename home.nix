@@ -41,6 +41,9 @@
     # system tools
     openssh
     unzip
+    bash-completion # needed for systemctl
+    zsh-autocomplete
+    zsh-completions
     # Development
     nodejs_20
     python3
@@ -95,14 +98,15 @@
     enable = true;
     enableAutosuggestions = true;
     enableCompletion = true;
-    initExtra = ''
-      source $HOME/.config/completion/dotnet.sh
-    '';
     oh-my-zsh = {
       enable = true;
       theme = "ys";
       plugins = ["git" "vi-mode" "systemd" "sudo"];
     };
+    initExtra = ''
+      source $HOME/.config/completion/dotnet.sh
+      source $HOME/.config/completion/elm-sh-completion/elm-completion.sh
+    '';
   };
 
   programs.git = {
