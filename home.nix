@@ -126,7 +126,7 @@
       init = {defaultBranch = "main";};
       pull = {
         rebase = false;
-        ff = false;
+        ff = true;
       };
       push = {default = "simple";};
       fetch = {prune = true;};
