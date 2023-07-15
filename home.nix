@@ -69,6 +69,9 @@
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
     # '';
+    ".npmrc".text = ''
+      prefix = ''${HOME}/.npm-packages
+    '';
   };
 
   # You can also manage environment variables but you will have to manually
@@ -83,7 +86,13 @@
   # if you don't want to manage your shell through Home Manager.
   home.sessionVariables = {
     EDITOR = "nvim";
+    NODE_PATH = "$HOME/.npm-packages/lib/node_modules";
+    WINHOME = "/mnt/c/Users/273/";
   };
+
+  home.sessionPath = [
+    "$HOME/.npm-packages/bin"
+  ];
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
