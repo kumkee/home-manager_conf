@@ -77,6 +77,10 @@
       recursive = false;
       source = ../nvim_custom/configs/ftplugin;
     };
+    ".config/nvim/lua/custom" = {
+      recursive = false;
+      source = ../nvim_custom;
+    };
   };
 
   # You can also manage environment variables but you will have to manually
