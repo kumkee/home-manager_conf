@@ -87,6 +87,7 @@
   home.sessionVariables = {
     EDITOR = "nvim";
     NODE_PATH = "$HOME/.npm-packages/lib/node_modules";
+    WINHOME = "/mnt/c/Users/273/";
   };
 
   home.sessionPath = [
