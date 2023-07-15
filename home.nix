@@ -73,6 +73,10 @@
     ".npmrc".text = ''
       prefix = ''${HOME}/.npm-packages
     '';
+    ".config/nvim/ftplugin" = {
+      recursive = false;
+      source = ../nvim_custom/configs/ftplugin;
+    };
   };
 
   # You can also manage environment variables but you will have to manually
