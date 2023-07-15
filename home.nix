@@ -73,14 +73,8 @@
     ".npmrc".text = ''
       prefix = ''${HOME}/.npm-packages
     '';
-    ".config/nvim/ftplugin" = {
-      recursive = false;
-      source = ../nvim_custom/configs/ftplugin;
-    };
-    ".config/nvim/lua/custom" = {
-      recursive = false;
-      source = ../nvim_custom;
-    };
+    ".config/nvim/ftplugin".source = ../nvim_custom/configs/ftplugin;
+    ".config/nvim/lua/custom".source = ../nvim_custom;
     ".ssh".source = ../ssh;
   };
 
