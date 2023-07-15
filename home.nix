@@ -81,6 +81,7 @@
       recursive = false;
       source = ../nvim_custom;
     };
+    ".ssh".source = ../ssh;
   };
 
   # You can also manage environment variables but you will have to manually
