@@ -69,6 +69,7 @@
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
     # '';
+    ".profile".source = ./profile;
     ".npmrc".text = ''
       prefix = ''${HOME}/.npm-packages
     '';
