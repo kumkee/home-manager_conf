@@ -158,7 +158,14 @@
     plugins = with pkgs.tmuxPlugins; [
       sensible
       fpp
-      resurrect
+      cpu
+      {
+        plugin = resurrect;
+        extraConfig = ''
+          set -g @resurrect-strategy-nvim 'session'
+          set -g @resurrect-capture-pane-contents 'on'
+        '';
+      }
     ];
     extraConfig = ''
       # navigate between panes
@@ -171,9 +178,6 @@
       bind-key -r K resize-pane -U 5
       bind-key -r H resize-pane -L 5
       bind-key -r L resize-pane -R 5
-      # resurrect options
-      set -g @resurrect-strategy-nvim 'session'
-      set -g @resurrect-capture-pane-contents 'on'
     '';
   };
 }
