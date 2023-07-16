@@ -41,13 +41,17 @@
     # system tools
     openssh
     unzip
+    ripgrep # telescope needed tis
     bash-completion # needed for systemctl
     zsh-autocomplete
     zsh-completions
     # Development
+    ## gcc
+    ## cmake
     nodejs_20
     python3
     dotnet-sdk_7
+    jre_minimal
     # nix language tools
     nil
     alejandra
@@ -76,6 +80,7 @@
     ".config/nvim/ftplugin".source = ../nvim_custom/configs/ftplugin;
     ".config/nvim/lua/custom".source = ../nvim_custom;
     ".ssh".source = ../ssh;
+    ".stylua.toml".source = ../nvim_custom/configs/stylua.toml;
   };
 
   # You can also manage environment variables but you will have to manually
