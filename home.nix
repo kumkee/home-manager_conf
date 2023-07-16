@@ -45,6 +45,7 @@
     bash-completion # needed for systemctl
     zsh-autocomplete
     zsh-completions
+    dos2unix
     # Development
     ## gcc
     ## cmake
