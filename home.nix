@@ -82,6 +82,7 @@
     ".config/nvim/lua/custom".source = ../nvim_custom;
     ".ssh".source = ../ssh;
     ".stylua.toml".source = ../nvim_custom/configs/stylua.toml;
+    ".vale.ini".source = ./configs/vale.ini;
   };
 
   # You can also manage environment variables but you will have to manually
