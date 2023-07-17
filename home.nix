@@ -47,12 +47,12 @@
     zsh-completions
     dos2unix
     # Development
-    ## gcc
+    gcc
     ## cmake
     nodejs_20
     python3
     dotnet-sdk_7
-    jre_minimal
+    ## jre_minimal # for ltex_ls
     # nix language tools
     nil
     alejandra
