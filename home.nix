@@ -46,6 +46,7 @@
     zsh-autocomplete
     zsh-completions
     dos2unix
+    shadowsocks-libev
     # Development
     gcc
     ## cmake
@@ -105,6 +106,11 @@
     "$HOME/.npm-packages/bin"
   ];
 
+  home.shellAliases = {
+    "ss-nep" = "ss-local -v -c ~/.config/secrets/ss-neptune.json";
+    "ss-earth" = "ss-local -v -c ~/.config/secrets/ss-earth.json";
+  };
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
@@ -159,7 +165,6 @@
     plugins = with pkgs.tmuxPlugins; [
       sensible
       fpp
-      cpu
       {
         plugin = resurrect;
         extraConfig = ''
