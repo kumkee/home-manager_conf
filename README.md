@@ -1,4 +1,4 @@
-# Nix with WSL Alpine
+# Nix installation on Windows Subsystem for Linux
 
 ## Install Alpine or Debian
 
@@ -9,6 +9,9 @@
      `wsl --import alpine .\WSL\alpine\ .\backup\Alpine\rootfs.tar.gz --version 2`
 - Debian
   - Update `apt` and install `xz-utils`, `systemd-timesyncd`, `zsh`, `curl`.
+  - Windows Subsystem for Linux (WSL) [time keeping problem](https://github.com/microsoft/WSL/issues/8204) can
+    be solve with
+    [this comment](https://github.com/microsoft/WSL/issues/8204#issuecomment-1338334154).
 
 ## Install NixOS
 
