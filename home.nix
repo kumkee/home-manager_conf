@@ -47,6 +47,7 @@
     zsh-completions
     dos2unix
     shadowsocks-libev
+    proxychains-ng
     # Development
     gcc
     ## cmake
@@ -76,6 +77,7 @@
     #   org.gradle.daemon.idletimeout=3600000
     # '';
     ".profile".source = ./profile;
+    # For global npm packages installation
     ".npmrc".text = ''
       prefix = ''${HOME}/.npm-packages
     '';
@@ -98,10 +100,13 @@
   # if you don't want to manage your shell through Home Manager.
   home.sessionVariables = {
     EDITOR = "nvim";
+    # For global npm packages installation
     NODE_PATH = "$HOME/.npm-packages/lib/node_modules";
+    PROXYCHAINS_CONF_FILE = "$HOME/.config/home-manager/configs/proxychains.conf";
     WINHOME = "/mnt/c/Users/273/";
   };
 
+  # For global npm packages installation
   home.sessionPath = [
     "$HOME/.npm-packages/bin"
   ];
