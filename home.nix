@@ -155,7 +155,9 @@
       diff = {colorMoved = "zebra";};
     };
     aliases = {
-      l = "log --graph --decorate --date=short --format='%C(bold blue)%h %C(bold green)%ad %C(auto)%d  %C(white)%s%C(reset)'";
+      l =
+        "log --graph --decorate --date=short --format="
+        + "'%C(bold blue)%h %C(bold green)%ad %C(auto)%d  %C(white)%s%C(reset)'";
       lg = "log --graph --decorate --oneline";
       pm = "push origin HEAD:main";
     };
