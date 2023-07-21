@@ -43,8 +43,6 @@
     unzip
     ripgrep # telescope needed tis
     bash-completion # needed for systemctl
-    zsh-autocomplete
-    zsh-completions
     dos2unix
     shadowsocks-libev
     proxychains-ng
@@ -169,6 +167,7 @@
     keyMode = "vi";
     prefix = "C-a";
     terminal = "screen-256color";
+    tmuxinator.enable = true;
     plugins = with pkgs.tmuxPlugins; [
       sensible
       fpp
