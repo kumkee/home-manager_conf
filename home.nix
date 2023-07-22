@@ -38,25 +38,25 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
-    # system tools
+    # system tools -----------------------
     openssh
     unzip
-    ripgrep # telescope needed tis
+    ripgrep # telescope needed this
     bash-completion # needed for systemctl
     dos2unix
     shadowsocks-libev
     proxychains-ng
-    # Development
+    # Development ------------------------
     gcc
     ## cmake
     nodejs_20
     python3
     dotnet-sdk_7
     ## jre_minimal # for ltex_ls
-    # nix language tools
-    nil
-    alejandra
-    # node packages
+    # nix language tools -----------------
+    nil # lsp
+    alejandra # formatter
+    # node packages ----------------------
     nodePackages.http-server
     elmPackages.elm
   ];
