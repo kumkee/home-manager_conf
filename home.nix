@@ -81,7 +81,8 @@
     '';
     ".config/nvim/ftplugin".source = ../nvim_custom/configs/ftplugin;
     ".config/nvim/lua/custom".source = ../nvim_custom;
-    ".ssh".source = ../ssh;
+    ".ssh/authorized_keys".source = ../ssh/authorized_keys;
+    ".ssh/config".source = ../ssh/config; # linking .ssh/ has no write permission
     ".stylua.toml".source = ../nvim_custom/configs/stylua.toml;
     ".vale.ini".source = ./configs/vale.ini;
   };
