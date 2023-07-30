@@ -32,7 +32,7 @@ Generate ssh key pair by running
 nix-shell -p openssh --run 'ssh-keygen -t ed25519'
 ```
 
-Then add the new public in GitHub.
+Then add the new public key in the GitHub profile.
 
 ### Cloning
 
@@ -47,5 +47,5 @@ Then add the new public in GitHub.
   [home-manager](https://nix-community.github.io/home-manager/index.html#ch-installation)
 - Have a look at this
   [blog post](https://cbailey.co.uk/posts/a_minimal_nix_development_environment_on_wsl).
-- Add the public in `authorized_keys` of the `ssh` sub-module and run
+- Add the public key in `authorized_keys` of the `ssh` sub-module and run
   `home-manager switch` to update the configuration.
