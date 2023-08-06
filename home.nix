@@ -103,6 +103,7 @@
     NODE_PATH = "$HOME/.npm-packages/lib/node_modules";
     PROXYCHAINS_CONF_FILE = "$HOME/.config/home-manager/configs/proxychains.conf";
     WINHOME = "/mnt/c/Users/273/";
+    DOTNET_ROOT = "${pkgs.dotnet-sdk_7}";
   };
 
   # For global npm packages installation
