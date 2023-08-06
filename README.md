@@ -9,12 +9,24 @@
      `wsl --import alpine .\WSL\alpine\ .\backup\Alpine\rootfs.tar.gz --version 2`
 - Debian
   - Update `apt` and install `xz-utils`, `systemd-timesyncd`, `zsh`, `curl`.
-  - Windows Subsystem for Linux (WSL)
-    [time keeping problem](https://github.com/microsoft/WSL/issues/8204) can be
-    solve with
-    [this comment](https://github.com/microsoft/WSL/issues/8204#issuecomment-1338334154)
-    and [this problem](https://github.com/microsoft/WSL/issues/5324) with
-    [this comment](https://github.com/microsoft/WSL/issues/5324#issuecomment-1640769478).
+  - Windows Subsystem for Linux (WSL) time keeping problems
+    ([8204](https://github.com/microsoft/WSL/issues/8204) and
+    [5324](https://github.com/microsoft/WSL/issues/5324) can be solve with
+    [this answer on `stackoverflow`](https://stackoverflow.com/questions/65086856/wsl2-clock-is-out-of-sync-with-windows).
+    > Windows: Open PowerShell as Administrator
+    ```shell
+    schtasks /create /tn WSLClockSync /tr "wsl.exe sudo hwclock -s" /sc onevent /ec system /mo "*[System[Provider[@Name='Microsoft-Windows-Kernel-General'] and (EventID=1)]]"
+    Set-ScheduledTask WSLClockSync -Settings (New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries)
+    ```
+    > WSL2: Run sudo visudo and add hwclock to sudoers to skip password prompt
+    ```bash
+    # bottom of my file looks like this
+    ...
+    ...
+    #includedir /etc/sudoers.d
+    <username> ALL=(ALL) NOPASSWD:/usr/sbin/hwclock
+
+    ```
 
 ## Install `NixOS`
 
