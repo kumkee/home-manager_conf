@@ -25,8 +25,15 @@
     ...
     #includedir /etc/sudoers.d
     <username> ALL=(ALL) NOPASSWD:/usr/sbin/hwclock
-
     ```
+    and
+    `sudo apt install systemd-timesyncd` then
+    > `sudo systemctl edit systemd-timesyncd` with the following contents:
+    > 
+    > ```
+    > [Unit]
+    > ConditionVirtualization=
+    > ConditionVirtualization=wsl
 
 ## Install `NixOS`
 
