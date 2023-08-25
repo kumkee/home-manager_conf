@@ -46,6 +46,7 @@
     dos2unix
     shadowsocks-libev
     proxychains-ng
+    cloudflared
     # Development ------------------------
     gcc
     ## cmake
