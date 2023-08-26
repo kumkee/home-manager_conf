@@ -112,6 +112,7 @@
   # For global npm packages installation
   home.sessionPath = [
     "$HOME/.npm-packages/bin"
+    "$HOME/.local/share/nvim/mason/bin"
   ];
 
   home.shellAliases = {
