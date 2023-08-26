@@ -59,7 +59,8 @@
     alejandra # formatter
     # node packages ----------------------
     nodePackages.http-server
-    nodePackages.typescript
+    ## nodePackages.typescript
+    nodePackages.ts-node
     elmPackages.elm
   ];
 
