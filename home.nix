@@ -157,6 +157,7 @@
       push = {default = "simple";};
       fetch = {prune = true;};
       diff = {colorMoved = "zebra";};
+      "url \"git@github.com:\"" = {insteadOf = "https://github.com/";};
     };
     aliases = {
       l =
