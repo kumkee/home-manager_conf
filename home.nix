@@ -197,6 +197,8 @@
       bind-key -r K resize-pane -U 5
       bind-key -r H resize-pane -L 5
       bind-key -r L resize-pane -R 5
+      # clear-history
+      bind-key -n C-l send-keys C-l \; clear-history
     '';
   };
 }
