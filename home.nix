@@ -49,10 +49,10 @@
     cloudflared
     # Development ------------------------
     gcc
-    ## cmake
     nodejs_20
     python3
     dotnet-sdk_7
+    azure-functions-core-tools
     ## jre_minimal # for ltex_ls
     # nix language tools -----------------
     nil # lsp
