@@ -51,7 +51,7 @@
     gcc
     nodejs_20
     python3
-    dotnet-sdk_7
+    dotnet-sdk
     azure-functions-core-tools
     ## jre_minimal # for ltex_ls
     # nix language tools -----------------
@@ -106,7 +106,7 @@
     NODE_PATH = "$HOME/.npm-packages/lib/node_modules";
     PROXYCHAINS_CONF_FILE = "$HOME/.config/home-manager/configs/proxychains.conf";
     WINHOME = "/mnt/c/Users/273/";
-    DOTNET_ROOT = "${pkgs.dotnet-sdk_7}";
+    DOTNET_ROOT = "${pkgs.dotnet-sdk}";
   };
 
   # For global npm packages installation
