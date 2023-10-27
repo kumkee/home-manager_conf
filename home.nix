@@ -82,6 +82,7 @@
     ".npmrc".text = ''
       prefix = ''${HOME}/.npm-packages
     '';
+    ".editorconfig".source = ./configs/editorconfig.ini;
     ".config/nvim/ftplugin".source = ../nvim_custom/configs/ftplugin;
     ".config/nvim/lua/custom".source = ../nvim_custom;
     ".ssh/authorized_keys".source = ../ssh/authorized_keys;
