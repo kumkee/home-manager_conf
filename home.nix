@@ -53,6 +53,7 @@
     python3
     dotnet-sdk
     azure-functions-core-tools
+    mitmproxy
     ## jre_minimal # for ltex_ls
     # nix language tools -----------------
     nil # lsp
