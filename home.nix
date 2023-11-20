@@ -144,6 +144,8 @@
     initExtra = ''
       source $HOME/.config/completion/dotnet.sh
       source $HOME/.config/completion/elm-sh-completion/elm-completion.sh
+      # az.bash was obtained via
+      # ln -s [path_to_az]/share/bash-completion/completions/az.bash completion/
       source $HOME/.config/completion/az.bash
     '';
   };
