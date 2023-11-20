@@ -52,6 +52,7 @@
     nodejs_20
     python3
     dotnet-sdk
+    azure-cli
     azure-functions-core-tools
     mitmproxy
     ## jre_minimal # for ltex_ls
@@ -143,6 +144,7 @@
     initExtra = ''
       source $HOME/.config/completion/dotnet.sh
       source $HOME/.config/completion/elm-sh-completion/elm-completion.sh
+      source $HOME/.config/completion/az.bash
     '';
   };
 
