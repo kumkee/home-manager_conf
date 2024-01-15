@@ -39,8 +39,8 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
     # system tools -----------------------
-    openssh
     unzip
+    wget
     ripgrep # telescope needed this
     bash-completion # needed for systemctl
     dos2unix
