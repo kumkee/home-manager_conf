@@ -142,11 +142,15 @@
       plugins = ["git" "vi-mode" "systemd" "sudo"];
     };
     initExtra = ''
-      source $HOME/.config/completion/dotnet.sh
-      source $HOME/.config/completion/elm-sh-completion/elm-completion.sh
+      $HOME/.config/completion/mkcompl.sh
+      for file in $HOME/.config/completion/*.completion; do
+        source $file
+      done
+      # source $HOME/.config/completion/dotnet.sh
+      # source $HOME/.config/completion/elm-sh-completion/elm-completion.sh
       # az.bash was obtained via
       # ln -s [path_to_az]/share/bash-completion/completions/az.bash completion/
-      source $HOME/.config/completion/az.bash
+      # source $HOME/.config/completion/az.bash
     '';
   };
 
