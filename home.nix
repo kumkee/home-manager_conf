@@ -49,6 +49,7 @@
     cloudflared
     # Development ------------------------
     gcc
+    gnumake
     nodejs_20
     python3
     dotnet-sdk
