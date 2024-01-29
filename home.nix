@@ -64,6 +64,7 @@
     nodePackages.http-server
     nodePackages.typescript
     nodePackages.ts-node
+    nodePackages.uglify-js
     elmPackages.elm
   ];
 
