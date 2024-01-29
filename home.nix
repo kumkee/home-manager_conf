@@ -66,6 +66,7 @@
     nodePackages.ts-node
     nodePackages.uglify-js
     elmPackages.elm
+    elmPackages.elm-land
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
