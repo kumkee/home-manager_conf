@@ -119,6 +119,7 @@
   home.sessionPath = [
     "$HOME/.npm-packages/bin"
     "$HOME/.local/share/nvim/mason/bin"
+    "$HOME/.dotnet/tools"
   ];
 
   home.shellAliases = {
