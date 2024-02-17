@@ -204,6 +204,8 @@
       }
     ];
     extraConfig = ''
+      # True color activation
+      set-option -sa terminal-features ',xterm-256color:RGB'
       # navigate between panes
       bind-key h select-pane -L
       bind-key j select-pane -D
