@@ -38,7 +38,7 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
-    # system tools -----------------------
+    ## system tools -----------------------
     unzip
     wget
     ripgrep # telescope needed this
@@ -47,7 +47,7 @@
     shadowsocks-libev
     proxychains-ng
     cloudflared
-    # Development ------------------------
+    ## Development ------------------------
     gcc
     gnumake
     nodejs_20
@@ -55,14 +55,15 @@
     dotnet-sdk
     azure-cli
     azure-functions-core-tools
-    lua-language-server
-    stylua
     mitmproxy
     ## jre_minimal # for ltex_ls
     # nix language tools -----------------
+    ## Language servers and formatters
+    lua-language-server
+    stylua
     nil # lsp
     alejandra # formatter
-    # node packages ----------------------
+    ## node packages ----------------------
     nodePackages.http-server
     nodePackages.typescript
     nodePackages.ts-node
