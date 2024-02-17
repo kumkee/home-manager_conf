@@ -55,6 +55,8 @@
     dotnet-sdk
     azure-cli
     azure-functions-core-tools
+    lua-language-server
+    stylua
     mitmproxy
     ## jre_minimal # for ltex_ls
     # nix language tools -----------------
