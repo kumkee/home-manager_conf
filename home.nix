@@ -163,7 +163,7 @@
 
   programs.git = {
     enable = true;
-    userName = "Jinjun Liang";
+    userName = "kumkee";
     userEmail = "kumkee@users.noreply.github.com";
     extraConfig = {
       init = {defaultBranch = "main";};
@@ -204,7 +204,7 @@
       }
     ];
     extraConfig = ''
-      # True color activation
+      # True colours
       set-option -sa terminal-features ',xterm-256color:RGB'
       # navigate between panes
       bind-key h select-pane -L
