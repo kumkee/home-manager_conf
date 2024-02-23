@@ -87,7 +87,6 @@ in {
     stylua
     nil # lsp
     alejandra # formatter
-    #fsautocomplete
     ## node packages ----------------------
     nodePackages.http-server
     nodePackages.typescript
