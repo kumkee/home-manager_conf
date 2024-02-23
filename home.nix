@@ -2,7 +2,31 @@
   # config,
   pkgs,
   ...
-}: {
+}: let
+  dotnetCombined =
+    (with pkgs.dotnetCorePackages;
+      combinePackages [
+        sdk_8_0
+        sdk_7_0
+        sdk_6_0
+      ])
+    .overrideAttrs (finalAttrs: previousAttrs: {
+      # This is needed to install workload in $HOME
+      # https://discourse.nixos.org/t/dotnet-maui-workload/20370/2
+
+      postBuild =
+        (previousAttrs.postBuild or '''')
+        + ''
+
+          for i in $out/sdk/*
+          do
+            i=$(basename $i)
+            mkdir -p $out/metadata/workloads/''${i/-*}
+            touch $out/metadata/workloads/''${i/-*}/userlocal
+          done
+        '';
+    });
+in {
   targets.genericLinux.enable = true;
 
   # Home Manager needs a bit of information about you and the paths it should
@@ -52,7 +76,7 @@
     gnumake
     nodejs_20
     python3
-    dotnet-sdk
+    dotnetCombined
     azure-cli
     azure-functions-core-tools
     mitmproxy
@@ -116,7 +140,7 @@
     NODE_PATH = "$HOME/.npm-packages/lib/node_modules";
     PROXYCHAINS_CONF_FILE = "$HOME/.config/home-manager/configs/proxychains.conf";
     WINHOME = "/mnt/c/Users/273/";
-    DOTNET_ROOT = "${pkgs.dotnet-sdk}";
+    DOTNET_ROOT = "${dotnetCombined}";
   };
 
   # For global npm packages installation
