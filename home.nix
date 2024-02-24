@@ -85,8 +85,9 @@ in {
     ## Language servers and formatters
     lua-language-server
     stylua
-    nil # lsp
-    alejandra # formatter
+    nil # nix lsp
+    alejandra # nix formatter
+    lemminx # xml lsp
     ## node packages ----------------------
     nodePackages.http-server
     nodePackages.typescript
