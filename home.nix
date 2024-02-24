@@ -80,7 +80,7 @@ in {
     azure-cli
     azure-functions-core-tools
     mitmproxy
-    ## jre_minimal # for ltex_ls
+    jdk # for ltex_ls
     # nix language tools -----------------
     ## Language servers and formatters
     lua-language-server
