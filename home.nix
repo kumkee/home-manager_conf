@@ -148,6 +148,7 @@ in {
     "$HOME/.npm-packages/bin"
     "$HOME/.local/share/nvim/mason/bin"
     "$HOME/.dotnet/tools"
+    "$HOME/.config/nix-autobahn"
   ];
 
   home.shellAliases = {
