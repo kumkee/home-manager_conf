@@ -88,6 +88,7 @@ in {
     nil # nix lsp
     alejandra # nix formatter
     lemminx # xml lsp
+    deno # ts formatter
     ## node packages ----------------------
     nodePackages.http-server
     nodePackages.typescript
