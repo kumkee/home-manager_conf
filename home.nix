@@ -26,6 +26,7 @@
           done
         '';
     });
+  pkgsUnstable = import <nixpkgs-unstable> {};
 in {
   targets.genericLinux.enable = true;
 
@@ -78,7 +79,8 @@ in {
     python3
     dotnetCombined
     azure-cli
-    azure-functions-core-tools
+    # azure-functions-core-tools
+    pkgsUnstable.azure-functions-core-tools
     mitmproxy
     jdk # for ltex_ls
     # nix language tools -----------------
