@@ -148,7 +148,7 @@ in {
 
   # For global npm packages installation
   home.sessionPath = [
-    "$HOME/.npm-packages/bin"
+    # "$HOME/.npm-packages/bin"
     "$HOME/.local/share/nvim/mason/bin"
     "$HOME/.dotnet/tools"
     "$HOME/.config/nix-autobahn"
@@ -187,6 +187,7 @@ in {
       # az.bash was obtained via
       # ln -s [path_to_az]/share/bash-completion/completions/az.bash completion/
       # source $HOME/.config/completion/az.bash
+      export PATH=$HOME/.npm-packages/bin:$PATH
     '';
   };
 
