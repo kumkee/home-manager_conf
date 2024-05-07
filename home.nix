@@ -173,6 +173,10 @@ in {
     enable = true;
     enableAutosuggestions = true;
     enableCompletion = true;
+    completionInit = ''
+      fpath=($HOME/.config/completion $fpath)
+      autoload -U compinit && compinit
+    '';
     oh-my-zsh = {
       enable = true;
       theme = "ys";
