@@ -80,6 +80,8 @@ in {
     dotnetCombined
     azure-cli
     pkgsUnstable.ghc # Haskell
+    pkgsUnstable.haskellPackages.haskell-language-server
+    pkgsUnstable.haskellPackages.fourmolu
     # azure-functions-core-tools
     pkgsUnstable.azure-functions-core-tools
     mitmproxy
