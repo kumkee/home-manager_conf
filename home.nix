@@ -79,7 +79,7 @@ in {
     python3
     dotnetCombined
     azure-cli
-    pkgsUnstable.ghc
+    pkgsUnstable.ghc # Haskell
     # azure-functions-core-tools
     pkgsUnstable.azure-functions-core-tools
     mitmproxy
