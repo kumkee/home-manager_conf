@@ -173,7 +173,7 @@ in {
 
   programs.zsh = {
     enable = true;
-    enableAutosuggestions = true;
+    autosuggestion.enable = true;
     enableCompletion = true;
     completionInit = ''
       fpath=($HOME/.config/completion $fpath)
