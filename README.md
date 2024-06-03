@@ -3,8 +3,8 @@
 ## Install `Alpine` or `Debian`
 
 - NixOS-WSL
-  This is the recommended way to have NixOS on Windows. Installation
-  instruction can be found on their [GitHub page](https://github.com/nix-community/NixOS-WSL)
+  - This is the recommended way to have NixOS on Windows. Installation
+    instruction can be found on their [GitHub page](https://github.com/nix-community/NixOS-WSL)
 - Alpine - deprecated
   1. Download latest zip from https://github.com/yuk7/AlpineWSL.
   1. Extract `Alpine.zip` into `D:\backup\Alpine`
