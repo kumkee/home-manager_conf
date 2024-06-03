@@ -2,10 +2,13 @@
 
 ## Install `Alpine` or `Debian`
 
-- Alpine
+- NixOS-WSL
+  This is the recommended way to have NixOS on Windows. Installation
+  instruction can be found on their [GitHub page](https://github.com/nix-community/NixOS-WSL)
+- Alpine - deprecated
   1. Download latest zip from https://github.com/yuk7/AlpineWSL.
-  2. Extract `Alpine.zip` into `D:\backup\Alpine`
-  3. On a PowerShell,
+  1. Extract `Alpine.zip` into `D:\backup\Alpine`
+  1. On a PowerShell,
      `wsl --import alpine .\WSL\alpine\ .\backup\Alpine\rootfs.tar.gz --version 2`
 - Debian
   - Update `apt` and install `xz-utils`, `systemd-timesyncd`, `zsh`, `curl`.
@@ -29,11 +32,12 @@
     and
     `sudo apt install systemd-timesyncd` then
     > `sudo systemctl edit systemd-timesyncd` with the following contents:
-    > 
+    >
     > ```
     > [Unit]
     > ConditionVirtualization=
     > ConditionVirtualization=wsl
+    > ```
 
 ## Install `NixOS`
 
