@@ -68,7 +68,7 @@ in {
     wget
     ripgrep # telescope needed this
     bash-completion # needed for systemctl
-    dos2unix
+    # dos2unix
     shadowsocks-libev
     proxychains-ng
     cloudflared
