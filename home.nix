@@ -3,8 +3,9 @@
   pkgs,
   ...
 }: let
+  pkgsUnstable = import <nixpkgs-unstable> {};
   dotnetCombined =
-    (with pkgs.dotnetCorePackages;
+    (with pkgsUnstable.dotnetCorePackages;
       combinePackages [
         sdk_8_0
         sdk_7_0
@@ -26,7 +27,6 @@
           done
         '';
     });
-  pkgsUnstable = import <nixpkgs-unstable> {};
 in {
   targets.genericLinux.enable = true;
 
