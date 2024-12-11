@@ -8,8 +8,8 @@
     (with pkgsUnstable.dotnetCorePackages;
       combinePackages [
         sdk_8_0
-        sdk_7_0
-        sdk_6_0
+        # sdk_7_0
+        # sdk_6_0
       ])
     .overrideAttrs (finalAttrs: previousAttrs: {
       # This is needed to install workload in $HOME
@@ -83,7 +83,7 @@ in {
     pkgsUnstable.haskellPackages.haskell-language-server
     pkgsUnstable.haskellPackages.fourmolu
     # azure-functions-core-tools
-    pkgsUnstable.azure-functions-core-tools
+    # pkgsUnstable.azure-functions-core-tools
     mitmproxy
     jdk # for ltex_ls
     # nix language tools -----------------
