@@ -75,7 +75,7 @@ in {
     ## Development ------------------------
     gcc
     gnumake
-    nodejs_20
+    nodejs_22
     python3
     dotnetCombined
     azure-cli
@@ -100,7 +100,7 @@ in {
     nodePackages.ts-node
     nodePackages.uglify-js
     elmPackages.elm
-    elmPackages.elm-land
+    # elmPackages.elm-land - nixpkgs deosn't work. to install via npm
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
