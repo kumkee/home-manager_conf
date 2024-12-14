@@ -1,0 +1,5 @@
+# 108: before home-manager update with working dotnet 6 & 8
+# 109: broken dotnet awaiting the following the merge to complete
+#      https://github.com/NixOS/nixpkgs/commit/d748cb403ea2caa33491d0ef2253edef8ffd2f3a      
+2024-12-14 09:46 : id 109 -> /nix/store/6nzqrbq0bxmd8cl3ajia2iva84s3k5xx-home-manager-generation
+2024-10-26 17:58 : id 108 -> /nix/store/d5ihhhdyhfzkag0d18jpya9nvmad2kdw-home-manager-generation
