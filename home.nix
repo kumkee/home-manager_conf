@@ -83,7 +83,7 @@ in {
     pkgsUnstable.haskellPackages.haskell-language-server
     pkgsUnstable.haskellPackages.fourmolu
     # azure-functions-core-tools
-    # pkgsUnstable.azure-functions-core-tools
+    pkgsUnstable.azure-functions-core-tools
     mitmproxy
     jdk # for ltex_ls
     # nix language tools -----------------
