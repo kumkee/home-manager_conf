@@ -75,7 +75,7 @@ in {
     ## Development ------------------------
     gcc
     gnumake
-    nodejs_22
+    nodejs
     python3
     dotnetCombined
     azure-cli
