@@ -100,6 +100,7 @@ in {
     nodePackages.ts-node
     nodePackages.uglify-js
     elmPackages.elm
+    elmPackages.elm-format
     # elmPackages.elm-land - nixpkgs deosn't work. to install via npm
   ];
 
