@@ -88,6 +88,8 @@ in {
     jdk # for ltex_ls
     # nix language tools -----------------
     ## Language servers and formatters
+    pkgsUnstable.fsautocomplete
+    pkgsUnstable.fantomas
     lua-language-server
     stylua
     nil # nix lsp
