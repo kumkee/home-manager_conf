@@ -94,7 +94,7 @@ in {
     stylua
     nil # nix lsp
     alejandra # nix formatter
-    lemminx # xml lsp
+    pkgsUnstable.lemminx # xml lsp
     deno # ts formatter
     ## node packages ----------------------
     nodePackages.http-server
