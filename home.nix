@@ -103,6 +103,7 @@ in {
     nodePackages.uglify-js
     elmPackages.elm
     elmPackages.elm-format
+    elmPackages.lamdera
     # elmPackages.elm-land - nixpkgs deosn't work. to install via npm
   ];
 
