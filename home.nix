@@ -77,19 +77,19 @@ in {
     gnumake
     nodejs
     python3
-    dotnetCombined
-    azure-cli
-    pkgsUnstable.ghc # Haskell
-    pkgsUnstable.haskellPackages.haskell-language-server
-    pkgsUnstable.haskellPackages.fourmolu
+    # dotnetCombined
+    # azure-cli
+    # pkgsUnstable.ghc # Haskell
+    # pkgsUnstable.haskellPackages.haskell-language-server
+    # pkgsUnstable.haskellPackages.fourmolu
     # azure-functions-core-tools
-    pkgsUnstable.azure-functions-core-tools
-    mitmproxy
-    jdk # for ltex_ls
+    # pkgsUnstable.azure-functions-core-tools
+    # mitmproxy
+    # jdk # for ltex_ls
     # nix language tools -----------------
     ## Language servers and formatters
-    pkgsUnstable.fsautocomplete
-    pkgsUnstable.fantomas
+    # pkgsUnstable.fsautocomplete
+    # pkgsUnstable.fantomas
     lua-language-server
     stylua
     nil # nix lsp
@@ -100,9 +100,9 @@ in {
     nodePackages.http-server
     nodePackages.typescript
     nodePackages.ts-node
-    nodePackages.uglify-js
-    elmPackages.elm
-    elmPackages.elm-format
+    # nodePackages.uglify-js
+    # elmPackages.elm
+    # elmPackages.elm-format
     # elmPackages.lamdera
     # elmPackages.elm-land - nixpkgs deosn't work. to install via npm
   ];
