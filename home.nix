@@ -4,29 +4,29 @@
   ...
 }: let
   pkgsUnstable = import <nixpkgs-unstable> {};
-  dotnetCombined =
-    (with pkgsUnstable.dotnetCorePackages;
-      combinePackages [
-        sdk_8_0
-        # sdk_7_0
-        # sdk_6_0
-      ])
-    .overrideAttrs (finalAttrs: previousAttrs: {
-      # This is needed to install workload in $HOME
-      # https://discourse.nixos.org/t/dotnet-maui-workload/20370/2
-
-      postBuild =
-        (previousAttrs.postBuild or '''')
-        + ''
-
-          for i in $out/sdk/*
-          do
-            i=$(basename $i)
-            mkdir -p $out/metadata/workloads/''${i/-*}
-            touch $out/metadata/workloads/''${i/-*}/userlocal
-          done
-        '';
-    });
+  # dotnetCombined =
+  #   (with pkgsUnstable.dotnetCorePackages;
+  #     combinePackages [
+  #       sdk_8_0
+  #       # sdk_7_0
+  #       # sdk_6_0
+  #     ])
+  #   .overrideAttrs (finalAttrs: previousAttrs: {
+  #     # This is needed to install workload in $HOME
+  #     # https://discourse.nixos.org/t/dotnet-maui-workload/20370/2
+  #
+  #     postBuild =
+  #       (previousAttrs.postBuild or '''')
+  #       + ''
+  #
+  #         for i in $out/sdk/*
+  #         do
+  #           i=$(basename $i)
+  #           mkdir -p $out/metadata/workloads/''${i/-*}
+  #           touch $out/metadata/workloads/''${i/-*}/userlocal
+  #         done
+  #       '';
+  #   });
 in {
   targets.genericLinux.enable = true;
 
@@ -150,7 +150,7 @@ in {
     NODE_PATH = "$HOME/.npm-packages/lib/node_modules";
     PROXYCHAINS_CONF_FILE = "$HOME/.config/home-manager/configs/proxychains.conf";
     WINHOME = "/mnt/c/Users/273/";
-    DOTNET_ROOT = "${dotnetCombined}";
+    # DOTNET_ROOT = "${dotnetCombined}";
   };
 
   # For global npm packages installation
