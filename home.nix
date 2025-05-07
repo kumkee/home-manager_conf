@@ -73,10 +73,10 @@ in {
     proxychains-ng
     cloudflared
     ## Development ------------------------
-    gcc
-    gnumake
-    nodejs
-    python3
+    # gcc
+    # gnumake
+    # nodejs
+    # python3
     # dotnetCombined
     # azure-cli
     # pkgsUnstable.ghc # Haskell
@@ -97,9 +97,9 @@ in {
     pkgsUnstable.lemminx # xml lsp
     deno # ts formatter
     ## node packages ----------------------
-    nodePackages.http-server
-    nodePackages.typescript
-    nodePackages.ts-node
+    # nodePackages.http-server
+    # nodePackages.typescript
+    # nodePackages.ts-node
     # nodePackages.uglify-js
     # elmPackages.elm
     # elmPackages.elm-format
