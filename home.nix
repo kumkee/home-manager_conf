@@ -103,8 +103,9 @@ in {
     nodePackages.uglify-js
     elmPackages.elm
     elmPackages.elm-format
-    elmPackages.lamdera
+    # elmPackages.lamdera
     # elmPackages.elm-land - nixpkgs deosn't work. to install via npm
+    elixir_1_18
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
