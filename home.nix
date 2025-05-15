@@ -73,7 +73,7 @@ in {
     proxychains-ng
     cloudflared
     ## Development ------------------------
-    # gcc
+    gcc
     # gnumake
     # nodejs
     # python3
