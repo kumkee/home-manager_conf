@@ -96,6 +96,7 @@ in {
     alejandra # nix formatter
     pkgsUnstable.lemminx # xml lsp
     deno # ts formatter
+    marksman # markdown
     ## node packages ----------------------
     # nodePackages.http-server
     # nodePackages.typescript
