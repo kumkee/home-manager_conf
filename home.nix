@@ -106,6 +106,9 @@ in {
     # elmPackages.elm-format
     # elmPackages.lamdera
     # elmPackages.elm-land - nixpkgs deosn't work. to install via npm
+    beamMinimal27Packages.elixir
+    beam27Packages.erlang
+    postgresql
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
