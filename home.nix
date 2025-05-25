@@ -106,6 +106,7 @@ in {
     # elmPackages.elm-format
     # elmPackages.lamdera
     # elmPackages.elm-land - nixpkgs deosn't work. to install via npm
+    ## elixir phoenix ---------------------
     beamMinimal27Packages.elixir
     beam27Packages.erlang
     postgresql
