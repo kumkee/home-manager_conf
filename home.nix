@@ -109,6 +109,7 @@ in {
     ## elixir phoenix ---------------------
     beamMinimal27Packages.elixir
     beam27Packages.erlang
+    beamMinimal27Packages.elixir-ls
     # postgresql # database for phoenix
     inotify-tools # for phoenix' Live Reloading
   ];
@@ -194,7 +195,7 @@ in {
       theme = "ys";
       plugins = ["git" "vi-mode" "systemd" "sudo"];
     };
-    initExtra = ''
+    initContent = ''
       $HOME/.config/completion/mkcompl.sh
       for file in $HOME/.config/completion/*.completion; do
         source $file
