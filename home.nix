@@ -109,7 +109,7 @@ in {
     ## elixir phoenix ---------------------
     beamMinimal27Packages.elixir
     beam27Packages.erlang
-    postgresql # database for phoenix
+    # postgresql # database for phoenix
     inotify-tools # for phoenix' Live Reloading
   ];
 
