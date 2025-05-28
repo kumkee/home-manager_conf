@@ -110,7 +110,7 @@ in {
     ## elixir phoenix ---------------------
     beam.elixir
     beam.erlang
-    lexical
+    beam.elixir-ls
     # postgresql # database for phoenix
     inotify-tools # for phoenix' Live Reloading
   ];
@@ -138,7 +138,7 @@ in {
     #".config/nvim/lua/custom".source = ../nvim_custom;
     ".ssh/authorized_keys".source = ../ssh/authorized_keys;
     ".ssh/config".source = ../ssh/config; # linking .ssh/ has no write permission
-    ".stylua.toml".source = ../nvim_custom/configs/stylua.toml;
+    ".stylua.toml".source = ../nvim/lua/configs/stylua.toml;
     # ".vale.ini".source = ./configs/vale.ini;
     # ".config/test.txt".text = elixirls.outPath;
   };
