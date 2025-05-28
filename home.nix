@@ -4,6 +4,8 @@
   ...
 }: let
   pkgsUnstable = import <nixpkgs-unstable> {};
+  beam = pkgs.beamMinimal27Packages;
+  elixirls = beam.elixir-ls;
   # dotnetCombined =
   #   (with pkgsUnstable.dotnetCorePackages;
   #     combinePackages [
@@ -107,9 +109,9 @@ in {
     # elmPackages.lamdera
     # elmPackages.elm-land - nixpkgs deosn't work. to install via npm
     ## elixir phoenix ---------------------
-    beamMinimal27Packages.elixir
-    beam27Packages.erlang
-    beamMinimal27Packages.elixir-ls
+    beam.elixir
+    beam.erlang
+    elixirls
     # postgresql # database for phoenix
     inotify-tools # for phoenix' Live Reloading
   ];
@@ -139,6 +141,7 @@ in {
     ".ssh/config".source = ../ssh/config; # linking .ssh/ has no write permission
     ".stylua.toml".source = ../nvim_custom/configs/stylua.toml;
     # ".vale.ini".source = ./configs/vale.ini;
+    # ".config/test.txt".text = elixirls.outPath;
   };
 
   # You can also manage environment variables but you will have to manually
