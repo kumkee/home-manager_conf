@@ -186,6 +186,7 @@ in {
     enable = true;
     autosuggestion.enable = true;
     enableCompletion = true;
+    syntaxHighlighting.enable = true;
     completionInit = ''
       fpath=($HOME/.config/completion $fpath)
       autoload -U compinit && compinit
