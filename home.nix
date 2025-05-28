@@ -67,7 +67,7 @@ in {
     unzip
     wget
     ripgrep # telescope needed this
-    bash-completion # needed for systemctl
+    # bash-completion # needed for systemctl
     # dos2unix
     shadowsocks-libev
     proxychains-ng
@@ -138,7 +138,7 @@ in {
     ".ssh/authorized_keys".source = ../ssh/authorized_keys;
     ".ssh/config".source = ../ssh/config; # linking .ssh/ has no write permission
     ".stylua.toml".source = ../nvim_custom/configs/stylua.toml;
-    ".vale.ini".source = ./configs/vale.ini;
+    # ".vale.ini".source = ./configs/vale.ini;
   };
 
   # You can also manage environment variables but you will have to manually
