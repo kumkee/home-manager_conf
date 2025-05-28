@@ -5,7 +5,6 @@
 }: let
   pkgsUnstable = import <nixpkgs-unstable> {};
   beam = pkgs.beamMinimal27Packages;
-  elixirls = beam.elixir-ls;
   # dotnetCombined =
   #   (with pkgsUnstable.dotnetCorePackages;
   #     combinePackages [
@@ -111,7 +110,7 @@ in {
     ## elixir phoenix ---------------------
     beam.elixir
     beam.erlang
-    elixirls
+    lexical
     # postgresql # database for phoenix
     inotify-tools # for phoenix' Live Reloading
   ];
