@@ -140,6 +140,10 @@ in {
     ".ssh/config".source = ../ssh/config; # linking .ssh/ has no write permission
     ".stylua.toml".source = ../nvim/lua/configs/stylua.toml;
     # ".vale.ini".source = ./configs/vale.ini;
+    ".config/nvim/lua/els.lua".text =
+      "Elixirls = \""
+      + beam.elixir-ls.outPath
+      + "/lib/language_server.sh\"";
     # ".config/test.txt".text = elixirls.outPath;
   };
 
