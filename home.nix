@@ -213,6 +213,17 @@ in {
       # ln -s [path_to_az]/share/bash-completion/completions/az.bash completion/
       # source $HOME/.config/completion/az.bash
       export PATH=$HOME/.npm-packages/bin:$PATH
+      ## nix-shell and nix develop into zsh not bash ##
+      alias nix-shell='nix-shell --run $SHELL'
+      nix() {
+        if [[ $1 == "develop" ]]; then
+          shift
+          command nix develop -c $SHELL "$@"
+        else
+          command nix "$@"
+        fi
+      }
+      #####
     '';
   };
 
