@@ -108,6 +108,7 @@ in {
     # elmPackages.lamdera
     # elmPackages.elm-land - nixpkgs deosn't work. to install via npm
     ## elixir phoenix ---------------------
+    asdf-vm
     # beam.elixir
     # beam.erlang
     # beam.elixir-ls
