@@ -108,9 +108,9 @@ in {
     # elmPackages.lamdera
     # elmPackages.elm-land - nixpkgs deosn't work. to install via npm
     ## elixir phoenix ---------------------
-    beam.elixir
-    beam.erlang
-    beam.elixir-ls
+    # beam.elixir
+    # beam.erlang
+    # beam.elixir-ls
     # postgresql # database for phoenix
     inotify-tools # for phoenix' Live Reloading
   ];
@@ -140,11 +140,10 @@ in {
     ".ssh/config".source = ../ssh/config; # linking .ssh/ has no write permission
     ".stylua.toml".source = ../nvim/lua/configs/stylua.toml;
     # ".vale.ini".source = ./configs/vale.ini;
-    ".config/nvim/lua/_nix_elixirls.lua".text =
-      "Elixirls = \""
-      + beam.elixir-ls.outPath
-      + "/lib/language_server.sh\"";
-    # ".config/test.txt".text = elixirls.outPath;
+    # ".config/nvim/lua/_nix_elixirls.lua".text =
+    #   "Elixirls = \""
+    #   + beam.elixir-ls.outPath
+    #   + "/lib/language_server.sh\"";
   };
 
   # You can also manage environment variables but you will have to manually
