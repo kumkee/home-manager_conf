@@ -94,6 +94,7 @@ in {
     lua-language-server
     stylua
     nil # nix lsp
+    nixd
     alejandra # nix formatter
     pkgsUnstable.lemminx # xml lsp
     deno # ts formatter
