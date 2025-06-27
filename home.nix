@@ -155,6 +155,12 @@ in {
       vimAlias = true;
     };
 
+    direnv = {
+      enable = true;
+      enableZshIntegration = true;
+      nix-direnv.enable = true;
+    };
+
     zsh = {
       enable = true;
       autosuggestion.enable = true;
