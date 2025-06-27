@@ -4,30 +4,7 @@
   ...
 }: let
   pkgsUnstable = import <nixpkgs-unstable> {};
-  beam = pkgs.beamMinimal27Packages;
-  # dotnetCombined =
-  #   (with pkgsUnstable.dotnetCorePackages;
-  #     combinePackages [
-  #       sdk_8_0
-  #       # sdk_7_0
-  #       # sdk_6_0
-  #     ])
-  #   .overrideAttrs (finalAttrs: previousAttrs: {
-  #     # This is needed to install workload in $HOME
-  #     # https://discourse.nixos.org/t/dotnet-maui-workload/20370/2
-  #
-  #     postBuild =
-  #       (previousAttrs.postBuild or '''')
-  #       + ''
-  #
-  #         for i in $out/sdk/*
-  #         do
-  #           i=$(basename $i)
-  #           mkdir -p $out/metadata/workloads/''${i/-*}
-  #           touch $out/metadata/workloads/''${i/-*}/userlocal
-  #         done
-  #       '';
-  #   });
+  # beam = pkgs.beamMinimal27Packages;
 in {
   targets.genericLinux.enable = true;
 
@@ -77,20 +54,7 @@ in {
     gcc
     # gnumake
     # nodejs
-    # python3
-    # dotnetCombined
-    # azure-cli
-    # pkgsUnstable.ghc # Haskell
-    # pkgsUnstable.haskellPackages.haskell-language-server
-    # pkgsUnstable.haskellPackages.fourmolu
-    # azure-functions-core-tools
-    # pkgsUnstable.azure-functions-core-tools
-    # mitmproxy
-    # jdk # for ltex_ls
-    # nix language tools -----------------
     ## Language servers and formatters ---------
-    # pkgsUnstable.fsautocomplete
-    # pkgsUnstable.fantomas
     lua-language-server
     stylua
     vscode-langservers-extracted
@@ -182,110 +146,115 @@ in {
   };
 
   # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
+  programs = {
+    home-manager.enable = true;
 
-  programs.neovim = {
-    enable = true;
-    viAlias = true;
-    vimAlias = true;
-  };
-
-  programs.zsh = {
-    enable = true;
-    autosuggestion.enable = true;
-    enableCompletion = true;
-    syntaxHighlighting.enable = true;
-    completionInit = ''
-      fpath=($HOME/.config/completion $fpath)
-      autoload -U compinit && compinit
-    '';
-    oh-my-zsh = {
+    neovim = {
       enable = true;
-      theme = "ys";
-      plugins = ["git" "vi-mode" "systemd" "sudo"];
+      viAlias = true;
+      vimAlias = true;
     };
-    initContent = ''
-      $HOME/.config/completion/mkcompl.sh
-      for file in $HOME/.config/completion/*.completion; do
-        source $file
-      done
-      # source $HOME/.config/completion/dotnet.sh
-      # source $HOME/.config/completion/elm-sh-completion/elm-completion.sh
-      # az.bash was obtained via
-      # ln -s [path_to_az]/share/bash-completion/completions/az.bash completion/
-      # source $HOME/.config/completion/az.bash
-      export PATH=$HOME/.npm-packages/bin:$PATH
-      ## nix-shell and nix develop into zsh not bash ##
-      alias nix-shell='nix-shell --run $SHELL'
-      nix() {
-        if [[ $1 == "develop" ]]; then
-          shift
-          command nix develop -c $SHELL "$@"
-        else
-          command nix "$@"
-        fi
-      }
-      #####
-    '';
-  };
 
-  programs.git = {
-    enable = true;
-    userName = "kumkee";
-    userEmail = "kumkee@users.noreply.github.com";
-    extraConfig = {
-      init = {defaultBranch = "main";};
-      pull = {
-        rebase = false;
-        ff = true;
+    zsh = {
+      enable = true;
+      autosuggestion.enable = true;
+      enableCompletion = true;
+      syntaxHighlighting.enable = true;
+      completionInit = ''
+        fpath=($HOME/.config/completion $fpath)
+        autoload -U compinit && compinit
+      '';
+      oh-my-zsh = {
+        enable = true;
+        theme = "ys";
+        plugins = ["git" "vi-mode" "systemd" "sudo"];
       };
-      push = {default = "simple";};
-      fetch = {prune = true;};
-      diff = {colorMoved = "zebra";};
-      "url \"ssh://git@github.com/\"" = {insteadOf = "https://github.com/";};
+      initContent = ''
+        $HOME/.config/completion/mkcompl.sh
+        for file in $HOME/.config/completion/*.completion; do
+          source $file
+        done
+        # source $HOME/.config/completion/dotnet.sh
+        # source $HOME/.config/completion/elm-sh-completion/elm-completion.sh
+        # az.bash was obtained via
+        # ln -s [path_to_az]/share/bash-completion/completions/az.bash completion/
+        # source $HOME/.config/completion/az.bash
+        export PATH=$HOME/.npm-packages/bin:$PATH
+        ## nix-shell and nix develop into zsh not bash ##
+        alias nix-shell='nix-shell --run $SHELL'
+        nix() {
+          if [[ $1 == "develop" ]]; then
+            shift
+            command nix develop -c $SHELL "$@"
+          else
+            command nix "$@"
+          fi
+        }
+        #####
+      '';
     };
-    aliases = {
-      l =
-        "log --graph --decorate --date=short --format="
-        + "'%C(bold blue)%h %C(bold green)%ad %C(auto)%d  %C(white)%s%C(reset)'";
-      lg = "log --graph --decorate --oneline";
-      pm = "push origin HEAD:main";
+
+    git = {
+      enable = true;
+      userName = "kumkee";
+      userEmail = "kumkee@users.noreply.github.com";
+      extraConfig = {
+        init = {defaultBranch = "main";};
+        pull = {
+          rebase = false;
+          ff = true;
+        };
+        push = {default = "simple";};
+        fetch = {prune = true;};
+        diff = {colorMoved = "zebra";};
+        "url \"ssh://git@github.com/\"" = {insteadOf = "https://github.com/";};
+      };
+      aliases = {
+        l =
+          "log --graph --decorate --date=short --format="
+          + "'%C(bold blue)%h %C(bold green)%ad %C(auto)%d  %C(white)%s%C(reset)'";
+        lg = "log --graph --decorate --oneline";
+        pm = "push origin HEAD:main";
+      };
+    };
+
+    tmux = {
+      enable = true;
+      escapeTime = 10;
+      keyMode = "vi";
+      prefix = "C-a";
+      terminal = "screen-256color";
+      tmuxinator.enable = true;
+      plugins = with pkgs.tmuxPlugins; [
+        sensible
+        fpp
+        {
+          plugin = resurrect;
+          extraConfig = ''
+            set -g @resurrect-strategy-nvim 'session'
+            set -g @resurrect-capture-pane-contents 'on'
+          '';
+        }
+      ];
+      extraConfig = ''
+        # True colours
+        set-option -sa terminal-features ',xterm-256color:RGB'
+        # navigate between panes
+        bind-key h select-pane -L
+        bind-key j select-pane -D
+        bind-key k select-pane -U
+        bind-key l select-pane -R
+        # resize the pane
+        bind-key -r J resize-pane -D 5
+        bind-key -r K resize-pane -U 5
+        bind-key -r H resize-pane -L 5
+        bind-key -r L resize-pane -R 5
+        # clear-history
+        bind-key C-l send-keys C-l 'tmux clear-history' Enter
+      '';
     };
   };
 
-  programs.tmux = {
-    enable = true;
-    escapeTime = 10;
-    keyMode = "vi";
-    prefix = "C-a";
-    terminal = "screen-256color";
-    tmuxinator.enable = true;
-    plugins = with pkgs.tmuxPlugins; [
-      sensible
-      fpp
-      {
-        plugin = resurrect;
-        extraConfig = ''
-          set -g @resurrect-strategy-nvim 'session'
-          set -g @resurrect-capture-pane-contents 'on'
-        '';
-      }
-    ];
-    extraConfig = ''
-      # True colours
-      set-option -sa terminal-features ',xterm-256color:RGB'
-      # navigate between panes
-      bind-key h select-pane -L
-      bind-key j select-pane -D
-      bind-key k select-pane -U
-      bind-key l select-pane -R
-      # resize the pane
-      bind-key -r J resize-pane -D 5
-      bind-key -r K resize-pane -U 5
-      bind-key -r H resize-pane -L 5
-      bind-key -r L resize-pane -R 5
-      # clear-history
-      bind-key C-l send-keys C-l 'tmux clear-history' Enter
-    '';
-  };
+  #
+  #
 }
