@@ -88,13 +88,14 @@ in {
     # mitmproxy
     # jdk # for ltex_ls
     # nix language tools -----------------
-    ## Language servers and formatters
+    ## Language servers and formatters ---------
     # pkgsUnstable.fsautocomplete
     # pkgsUnstable.fantomas
     lua-language-server
     stylua
+    vscode-langservers-extracted
+    yaml-language-server
     nil # nix lsp
-    nixd
     alejandra # nix formatter
     pkgsUnstable.lemminx # xml lsp
     deno # ts formatter
