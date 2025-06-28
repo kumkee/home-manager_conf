@@ -79,7 +79,7 @@ in {
     # beam.erlang
     # beam.elixir-ls
     # postgresql # database for phoenix
-    inotify-tools # for phoenix' Live Reloading
+    # inotify-tools # for phoenix' Live Reloading
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
