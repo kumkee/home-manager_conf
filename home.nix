@@ -52,8 +52,8 @@ in {
     cloudflared
     ## Development ------------------------
     gcc
+    nodejs
     # gnumake
-    # nodejs
     ## Language servers and formatters ---------
     lua-language-server
     stylua
