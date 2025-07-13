@@ -4,7 +4,7 @@
   ...
 }: let
   pkgsUnstable = import <nixpkgs-unstable> {};
-  beam = pkgs.beamMinimal27Packages;
+  # beam = pkgs.beamMinimal27Packages;
 in {
   targets.genericLinux.enable = true;
 
@@ -107,10 +107,10 @@ in {
     ".ssh/config".source = ../ssh/config; # linking .ssh/ has no write permission
     ".stylua.toml".source = ../nvim/lua/configs/stylua.toml;
     # ".vale.ini".source = ./configs/vale.ini;
-    ".config/nvim/lua/_nix_elixirls.lua".text =
-      "Elixirls = \""
-      + beam.elixir-ls.outPath
-      + "/lib/language_server.sh\"";
+    # ".config/nvim/lua/_nix_elixirls.lua".text =
+    #   "Elixirls = \""
+    #   + beam.elixir-ls.outPath
+    #   + "/lib/language_server.sh\"";
   };
 
   # You can also manage environment variables but you will have to manually
