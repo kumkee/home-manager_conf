@@ -158,6 +158,8 @@ in {
     direnv = {
       enable = true;
       enableZshIntegration = true;
+      # this is needed for direnv to work with zsh
+      # TODO: search "direnv zsh nix trap"
       nix-direnv.enable = true;
     };
 
