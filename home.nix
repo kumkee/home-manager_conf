@@ -53,6 +53,7 @@ in {
     ## Development ------------------------
     gcc
     nodejs
+    devenv
     # gnumake
     ## Language servers and formatters ---------
     lua-language-server
