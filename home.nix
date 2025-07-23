@@ -53,7 +53,7 @@ in {
     ## Development ------------------------
     gcc
     nodejs
-    devenv
+    pkgsUnstable.devenv
     # gnumake
     ## Language servers and formatters ---------
     lua-language-server
