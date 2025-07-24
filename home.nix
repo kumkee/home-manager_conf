@@ -176,7 +176,7 @@ in {
       oh-my-zsh = {
         enable = true;
         theme = "ys";
-        plugins = ["git" "vi-mode" "systemd" "sudo"];
+        plugins = ["git" "vi-mode" "systemd" "sudo" "direnv"];
       };
       initContent = ''
         $HOME/.config/completion/mkcompl.sh
