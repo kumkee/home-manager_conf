@@ -161,6 +161,7 @@ in {
       enableZshIntegration = true;
       # this is needed for direnv to work with zsh
       # TODO: search "direnv zsh nix trap"
+      package = pkgsUnstable.direnv;
       nix-direnv.enable = true;
     };
 
