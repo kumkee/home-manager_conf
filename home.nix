@@ -54,6 +54,7 @@ in {
     gcc
     nodejs
     pkgsUnstable.devenv
+    ihp-new
     # gnumake
     ## Language servers and formatters ---------
     lua-language-server
